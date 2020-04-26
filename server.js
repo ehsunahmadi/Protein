@@ -14,10 +14,10 @@ app.get("/", (req, res) => res.send("API running"));
 // Define Routes
 app.use("/api/users", require("./routes/api/users"));
 app.use("/api/auth", require("./routes/api/auth"));
-app.use("/api/cart", require("./routes/api/cart"));
-app.use("/api/category", require("./routes/api/category"));
 app.use("/api/profile", require("./routes/api/profile"));
-app.use("/api/item", require("./routes/api/profile"));
+app.use("/api/order", require("./routes/api/order"));
+app.use("/api/items", require("./routes/api/items"));
+app.use("/api/category", require("./routes/api/category"));
 
 const PORT = process.env.PORT || 5000;
 

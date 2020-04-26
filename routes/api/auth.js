@@ -90,11 +90,15 @@ router.post(
 
       const isMatch = await bcrypt.compare(password, user.password);
       if (isMatch) {
-        const payload = { id: user.id };
+        const payload = {
+          user: {
+            id: user.id
+          }
+        };
         jwt.sign(
           payload,
           config.get("jwtSecret"),
-          { expiresIn: 3600 },
+          { expiresIn: 36000 },
           (err, token) => {
             if (err) throw err;
             res.status(200).json({

@@ -19,7 +19,8 @@ const ItemSchema = new Mongoose.Schema({
     trim: true
   },
   quantity: {
-    type: Number
+    type: Number,
+    default: 1
   },
   price: {
     type: Number,
